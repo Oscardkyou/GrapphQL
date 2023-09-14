@@ -1,9 +1,61 @@
-This code is for a Django admin interface. It registers two models, Category and Post, with the admin site and specifies how they should be displayed and filtered in the admin interface.
+# 🚀 GrapheQL: Django GraphQL API
 
-For the Category model, it creates a class called CategoryAdmin that inherits from admin.ModelAdmin. This class specifies that the list view of Category objects should display the name and created_at fields. It also adds a filter for the created_at field and enables searching by name.
+![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/GrapheQL)
+![GitHub license](https://img.shields.io/github/license/yourusername/GrapheQL)
 
-For the Post model, it creates a class called PostAdmin that also inherits from admin.ModelAdmin. This class specifies that the list view of Post objects should display the title, category, created_at, location, description, and a custom method called get_image. It also adds filters for the category, created_at, and location fields, and enables searching by title.
+## 🌟 Описание проекта
 
-The get_image method is defined within the PostAdmin class. It takes an object (a Post instance) as an argument and returns the HTML for displaying the image associated with that Post. If the Post has an image, it uses the mark_safe function to mark the HTML as safe to display, and returns an img tag with the image URL. If the Post does not have an image, it simply returns the string 'Not Image'.
+GrapheQL - это проект API на основе **Django**, который использует **GraphQL** для обеспечения более гибкой и эффективной доставки данных. В этом проекте регистрируются две модели: `Category` и `Post`, которые можно управлять через административный интерфейс Django.
 
-Overall, this code configures the admin interface for the Category and Post models, specifying how they should be displayed, filtered, and searched in the admin interface.
+## 🚀 Установка и настройка
+
+Для установки и настройки проекта выполните следующие шаги:
+
+1. Клонируйте репозиторий.
+2. Установите необходимые зависимости, указанные в файле `requirements.txt`.
+3. Выполните миграции с помощью команды `python manage.py migrate`.
+4. Запустите сервер с помощью команды `python manage.py runserver`.
+
+## 📁 Структура проекта
+
+- `.vscode`: Директория, содержащая настройки VSCode для проекта.
+- `api_main`: Главный модуль API.
+- `graphql_main`: Модуль, содержащий основную логику GraphQL.
+- `main`: Главный модуль проекта.
+- `.dockerignore`: Файл для игнорирования определенных файлов и директорий при создании Docker образа.
+- `.gitignore`: Файл для исключения определенных файлов и директорий из контроля версий git.
+- `Dockerfile`: Файл для создания Docker образа проекта.
+- `manage.py`: Утилита командной строки Django для управления проектом.
+- `requirements.txt`: Файл, содержащий все необходимые зависимости для проекта.
+- `run.sh`: Скрипт для запуска проекта.
+- `gitpush.sh`: Скрипт для автоматизации операций push в git.
+
+## 🖥 Административный интерфейс
+
+### Модель Category
+
+- `name`: Название категории.
+- `created_at`: Дата создания категории.
+  - Фильтры: `created_at`.
+  - Поиск: по `name`.
+
+### Модель Post
+
+- `title`: Заголовок поста.
+- `category`: Категория поста.
+- `created_at`: Дата создания поста.
+- `location`: Местоположение, связанное с постом.
+- `description`: Описание поста.
+- `get_image`: Метод для отображения изображения, связанного с постом. 
+  - Фильтры: `category`, `created_at`, `location`.
+  - Поиск: по `title`.
+
+## 👥 Сотрудничество
+
+Если вы хотите внести свой вклад в этот проект, не стесняйтесь отправлять pull requests.
+
+## 📜 Лицензия
+
+Этот проект распространяется под лицензией MIT. 
+
+> **Примечание**: Не забудьте заменить `yourusername` на ваше имя пользователя на GitHub в бейджах на верху файла.
